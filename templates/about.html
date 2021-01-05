@@ -10,4 +10,10 @@
         Number data -> {{ my_number }}<br>
         List variable -> {{ my_list }}
     </p>
+    <p>Data with for loop </p>
+    <ul>
+        {% for list in my_list %}
+            <li>{{ forloop.counter }}->{{ list }}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}
