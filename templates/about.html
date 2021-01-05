@@ -11,9 +11,22 @@
         List variable -> {{ my_list }}
     </p>
     <p>Data with for loop </p>
+
     <ul>
         {% for list in my_list %}
             <li>{{ forloop.counter }}->{{ list }}</li>
         {% endfor %}
     </ul>
+
+    <ul>
+        {% for list in check_list %}
+            {% if list > 5 %}
+                <li>{{ forloop.counter }}->{{ list }} greater than 5 and &nbsp;&nbsp; {{ list }} + 10 is {{ list|add:10 }}</li><!-- |add is called built in template tag filter -->
+            {% else %}
+                <li>{{ forloop.counter }}->{{ list }} smaller than 5</li>
+            {% endif %}
+
+        {% endfor %}
+    </ul>
+
 {% endblock %}
