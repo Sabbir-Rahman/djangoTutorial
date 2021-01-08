@@ -11,8 +11,8 @@
 
 -->
     <!-- Raw html form -->
-    <form action='http://www.google.com/search' method="GET">
-        <input type='text' name='q' placeholder="Your search"/>
+    <form action='' method="POST">{% csrf_token %}
+        <input type='text' name='q' placeholder="Your title"/>
         <input type="submit" value="Save"/>
     </form>
 {% endblock %}
