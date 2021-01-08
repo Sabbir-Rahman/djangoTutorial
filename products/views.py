@@ -5,17 +5,24 @@ from .form import ProductForm
 
 
 
+
+#for raw form
 def product_create_view(request):
-    form = ProductForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        form = ProductForm()# re render
+    context = {}
+    return render(request,"product_create.html", context);
 
-    context = {
-        'form' : form
-    }
-    return render(request,"product_create.html",context)
-
+# #for django form
+# def product_create_view(request):
+#     form = ProductForm(request.POST or None)
+#     if form.is_valid():
+#         form.save()
+#         form = ProductForm()# re render
+#
+#     context = {
+#         'form' : form
+#     }
+#     return render(request,"product_create.html",context)
+#
 
 
 
