@@ -2,6 +2,7 @@
 
 {% block content %}
     <h2>Welcome from product create view</h2>
+    <h5>Please fill the form</h5>
 
     <!-- django form
     <form method="POST"> {% csrf_token %}
@@ -18,7 +19,7 @@
     -->
 
     <form action='' method="POST">{% csrf_token %}
-        {{ form.as_p }} <!--form as paragraph-->
+        {{ form.as_p }} <!--form as paragraph if form.as_ul will show it as list-->
         <input type="submit" value="Save"/>
     </form>
 {% endblock %}
