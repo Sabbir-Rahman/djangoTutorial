@@ -3,10 +3,10 @@
 {% block content %}
 <h2>welcome from detail page</h2>
 
-<h1>{{ title }}</h1>
+<h1>{{ object.title }}</h1>
 <p>
-    {% if description %}
-        {{ description }}
+    {% if object.description %}
+        {{ object.description }}
     {% else %}
         Description coming soon
     {% endif %}
