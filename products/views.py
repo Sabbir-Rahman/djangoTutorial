@@ -13,6 +13,7 @@ def product_create_view(request):
         if my_form.is_valid():
             #now it is good data
             print(my_form.cleaned_data)
+            Product.objects.create(**my_form.cleaned_data)
         else:
             print(my_form.errors)
     context = {
