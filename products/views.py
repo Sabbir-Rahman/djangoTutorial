@@ -38,7 +38,12 @@ from .form import ProductForm, RawProductForm
 
 #for django form
 def product_create_view(request):
-    form = ProductForm(request.POST or None)
+    initial_data = {
+        'title': "This is awesome title"
+    }
+    obj = Product.objects.get(id=2)
+    form = ProductForm(request.POST or None, initial=initial_data)
+    #form = ProductForm(request.POST or None, instance=obj)#by this id 2 obj data can be rendered and then updatede
     if form.is_valid():
         form.save()
         form = ProductForm()# re render
