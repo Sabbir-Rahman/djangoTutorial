@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Product
 from .form import ProductForm, RawProductForm
 # Create your views here.
@@ -70,7 +70,8 @@ def product_detail_view(request):
 
 
 def dynamic_lookup_view(request,my_id):
-    obj = Product.objects.get(id=my_id)
+    #obj = Product.objects.get(id=my_id)
+    obj = get_object_or_404(Product, id=my_id)
     context = {
         "object": obj
     }
