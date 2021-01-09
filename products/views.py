@@ -69,3 +69,9 @@ def product_detail_view(request):
     return render(request, "detail.html", context)
 
 
+def dynamic_lookup_view(request,my_id):
+    obj = Product.objects.get(id=my_id)
+    context = {
+        "object": obj
+    }
+    return render(request, "detail.html",context)
