@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>welcome from detail page</h2>
+
+<h1>{{ object.title }}</h1>
+<p>
+    {% if object.description %}
+        {{ object.description }}
+    {% else %}
+        Description coming soon
+    {% endif %}
+    <br>
+    Object Price: {{ object.price }} usd
+    <br>
+    Object Summary: {{ object.summary }}
+    <br>
+    Object Featured: {{ object.featured }}
+
+</p>
+    <form action="." method="POST">
+    {% csrf_token %}
+    <h4><font color="red">Do you want to delete this product ?</font></h4>
+    <p><input type="submit" value="Yes"> <a href="../">Cancel</a> </p>
+    </form>
+
+{% endblock %}
