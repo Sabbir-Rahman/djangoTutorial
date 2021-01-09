@@ -28,6 +28,7 @@ class ProductForm(forms.ModelForm):
 
     def clean_title(self, *args, **kwargs):
         title = self.cleaned_data.get("title")
+        #can use in any validation
         if not "sabbir" in title:
             raise forms.ValidationError("This is not a valid title you must contain sabbir word")
         if not "django" in title:
