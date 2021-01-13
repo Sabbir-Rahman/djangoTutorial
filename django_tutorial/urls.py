@@ -21,6 +21,7 @@ from products.views import product_detail_view,product_create_view,dynamic_looku
 
 urlpatterns = [
     path('',include('products.urls')),
+    path('blog/',include('blog.urls')),
     path('',home_view,name='home'),
     path('contact/',contact_view),
     path('about/',about_view),
