@@ -1,0 +1,10 @@
+<h2>Welcome from article list</h2>
+
+
+
+{% block content %}
+   {% for i in object_list  %}
+        <p>{{ i.id }} -> <a href="{{ i.get_absolute_url }}"> {{ i.title }}</a></p>
+    {% endfor %}
+
+{% endblock content %}
