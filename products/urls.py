@@ -8,6 +8,8 @@ from .views import (
     dynamic_lookup_view,
 )
 
+
+app_name = 'products'
 urlpatterns = [
 
     path('productCreate/', product_create_view, name='product-list'),
