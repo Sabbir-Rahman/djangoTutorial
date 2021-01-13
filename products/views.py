@@ -56,8 +56,8 @@ def product_create_view(request):
 
 
 
-def product_detail_view(request):
-    obj = Product.objects.get(id=2)
+def product_detail_view(request,id):
+    obj = get_object_or_404(Product,id=id)
     # context = {
     #     'title':obj.title,
     #     'description': obj.description
@@ -99,3 +99,14 @@ def product_list_view(request):
     }
 
     return render(request, "product_list.html", context)
+
+
+def product_update_view(request,my_id=id):
+    obj = get_object_or_404(Product, id=my_id)
+    form = ProductForm(request.POST or None, instance=obj)
+    if form.is_valid():
+        form.save()
+    context = {
+        'form': form
+    }
+    return render(request,"product_create.html",context)
